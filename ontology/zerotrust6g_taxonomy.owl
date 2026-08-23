@@ -1,0 +1,404 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.elfak.ni.ac.rs/zerotrust6g#"
+     xml:base="http://www.elfak.ni.ac.rs/zerotrust6g"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.elfak.ni.ac.rs/zerotrust6g"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.elfak.ni.ac.rs/zerotrust6g#consistentWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.elfak.ni.ac.rs/zerotrust6g#consistentWith">
+        <rdfs:domain rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#Action"/>
+        <rdfs:range rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#Goal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.elfak.ni.ac.rs/zerotrust6g#governedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.elfak.ni.ac.rs/zerotrust6g#governedBy">
+        <rdfs:domain rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#Action"/>
+        <rdfs:range rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#SecurityPolicy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.elfak.ni.ac.rs/zerotrust6g#hasRole -->
+
+    <owl:ObjectProperty rdf:about="http://www.elfak.ni.ac.rs/zerotrust6g#hasRole">
+        <rdfs:domain rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#AutonomousAgent"/>
+        <rdfs:range rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#WorkflowState"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.elfak.ni.ac.rs/zerotrust6g#isAtState -->
+
+    <owl:ObjectProperty rdf:about="http://www.elfak.ni.ac.rs/zerotrust6g#isAtState">
+        <rdfs:domain rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#AutonomousAgent"/>
+        <rdfs:range rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#WorkflowState"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.elfak.ni.ac.rs/zerotrust6g#operatesAt -->
+
+    <owl:ObjectProperty rdf:about="http://www.elfak.ni.ac.rs/zerotrust6g#operatesAt">
+        <rdfs:domain rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#Entity"/>
+        <rdfs:range rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#InfrastructureLayer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.elfak.ni.ac.rs/zerotrust6g#participatesIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.elfak.ni.ac.rs/zerotrust6g#participatesIn">
+        <rdfs:domain rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#Entity"/>
+        <rdfs:range rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#Workflow"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.elfak.ni.ac.rs/zerotrust6g#performsAction -->
+
+    <owl:ObjectProperty rdf:about="http://www.elfak.ni.ac.rs/zerotrust6g#performsAction">
+        <rdfs:domain rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#Entity"/>
+        <rdfs:range rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#Action"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.elfak.ni.ac.rs/zerotrust6g#pursues -->
+
+    <owl:ObjectProperty rdf:about="http://www.elfak.ni.ac.rs/zerotrust6g#pursues">
+        <rdfs:domain rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#AutonomousAgent"/>
+        <rdfs:range rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#Goal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.elfak.ni.ac.rs/zerotrust6g#requestsAccessTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.elfak.ni.ac.rs/zerotrust6g#requestsAccessTo">
+        <rdfs:domain rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#Entity"/>
+        <rdfs:range rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.elfak.ni.ac.rs/zerotrust6g#transitionsTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.elfak.ni.ac.rs/zerotrust6g#transitionsTo">
+        <rdfs:domain rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#WorkflowState"/>
+        <rdfs:range rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#WorkflowState"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.elfak.ni.ac.rs/zerotrust6g#hasMinimumTrust -->
+
+    <owl:DatatypeProperty rdf:about="http://www.elfak.ni.ac.rs/zerotrust6g#hasMinimumTrust">
+        <rdfs:domain rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#SecurityPolicy"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.elfak.ni.ac.rs/zerotrust6g#isAuthenticated -->
+
+    <owl:DatatypeProperty rdf:about="http://www.elfak.ni.ac.rs/zerotrust6g#isAuthenticated">
+        <rdfs:domain rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.elfak.ni.ac.rs/zerotrust6g#trustValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.elfak.ni.ac.rs/zerotrust6g#trustValue">
+        <rdfs:domain rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.elfak.ni.ac.rs/zerotrust6g#Action -->
+
+    <owl:Class rdf:about="http://www.elfak.ni.ac.rs/zerotrust6g#Action">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.elfak.ni.ac.rs/zerotrust6g#Agent -->
+
+    <owl:Class rdf:about="http://www.elfak.ni.ac.rs/zerotrust6g#Agent">
+        <rdfs:subClassOf rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.elfak.ni.ac.rs/zerotrust6g#AutonomousAgent -->
+
+    <owl:Class rdf:about="http://www.elfak.ni.ac.rs/zerotrust6g#AutonomousAgent">
+        <rdfs:subClassOf rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.elfak.ni.ac.rs/zerotrust6g#CloudLayer -->
+
+    <owl:Class rdf:about="http://www.elfak.ni.ac.rs/zerotrust6g#CloudLayer">
+        <rdfs:subClassOf rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#InfrastructureLayer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.elfak.ni.ac.rs/zerotrust6g#CompromisedAgent -->
+
+    <owl:Class rdf:about="http://www.elfak.ni.ac.rs/zerotrust6g#CompromisedAgent">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.elfak.ni.ac.rs/zerotrust6g#AutonomousAgent"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#operatesAt"/>
+                        <owl:someValuesFrom rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#EdgeLayer"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#trustValue"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.3</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#AutonomousAgent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.elfak.ni.ac.rs/zerotrust6g#ContextualState -->
+
+    <owl:Class rdf:about="http://www.elfak.ni.ac.rs/zerotrust6g#ContextualState">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.elfak.ni.ac.rs/zerotrust6g#ControlLayer -->
+
+    <owl:Class rdf:about="http://www.elfak.ni.ac.rs/zerotrust6g#ControlLayer">
+        <rdfs:subClassOf rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#InfrastructureLayer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.elfak.ni.ac.rs/zerotrust6g#Device -->
+
+    <owl:Class rdf:about="http://www.elfak.ni.ac.rs/zerotrust6g#Device">
+        <rdfs:subClassOf rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.elfak.ni.ac.rs/zerotrust6g#EdgeLayer -->
+
+    <owl:Class rdf:about="http://www.elfak.ni.ac.rs/zerotrust6g#EdgeLayer">
+        <rdfs:subClassOf rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#InfrastructureLayer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.elfak.ni.ac.rs/zerotrust6g#Entity -->
+
+    <owl:Class rdf:about="http://www.elfak.ni.ac.rs/zerotrust6g#Entity">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.elfak.ni.ac.rs/zerotrust6g#Goal -->
+
+    <owl:Class rdf:about="http://www.elfak.ni.ac.rs/zerotrust6g#Goal">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.elfak.ni.ac.rs/zerotrust6g#InfrastructureLayer -->
+
+    <owl:Class rdf:about="http://www.elfak.ni.ac.rs/zerotrust6g#InfrastructureLayer">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.elfak.ni.ac.rs/zerotrust6g#Request -->
+
+    <owl:Class rdf:about="http://www.elfak.ni.ac.rs/zerotrust6g#Request">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.elfak.ni.ac.rs/zerotrust6g#Resource -->
+
+    <owl:Class rdf:about="http://www.elfak.ni.ac.rs/zerotrust6g#Resource">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.elfak.ni.ac.rs/zerotrust6g#SecurityPolicy -->
+
+    <owl:Class rdf:about="http://www.elfak.ni.ac.rs/zerotrust6g#SecurityPolicy">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.elfak.ni.ac.rs/zerotrust6g#Service -->
+
+    <owl:Class rdf:about="http://www.elfak.ni.ac.rs/zerotrust6g#Service">
+        <rdfs:subClassOf rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.elfak.ni.ac.rs/zerotrust6g#TrustScore -->
+
+    <owl:Class rdf:about="http://www.elfak.ni.ac.rs/zerotrust6g#TrustScore">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.elfak.ni.ac.rs/zerotrust6g#User -->
+
+    <owl:Class rdf:about="http://www.elfak.ni.ac.rs/zerotrust6g#User">
+        <rdfs:subClassOf rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.elfak.ni.ac.rs/zerotrust6g#Workflow -->
+
+    <owl:Class rdf:about="http://www.elfak.ni.ac.rs/zerotrust6g#Workflow">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.elfak.ni.ac.rs/zerotrust6g#WorkflowState -->
+
+    <owl:Class rdf:about="http://www.elfak.ni.ac.rs/zerotrust6g#WorkflowState">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.elfak.ni.ac.rs/zerotrust6g#CompromisedAgent_002 -->
+
+    <owl:NamedIndividual rdf:about="http://www.elfak.ni.ac.rs/zerotrust6g#CompromisedAgent_002">
+        <rdf:type rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#AutonomousAgent"/>
+        <operatesAt rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#EdgeLayer_001"/>
+        <trustValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.15</trustValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.elfak.ni.ac.rs/zerotrust6g#EdgeLayer_001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.elfak.ni.ac.rs/zerotrust6g#EdgeLayer_001">
+        <rdf:type rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#EdgeLayer"/>
+        <operatesAt rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#EdgeLayer_001"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.elfak.ni.ac.rs/zerotrust6g#Goal_MonitorPatient -->
+
+    <owl:NamedIndividual rdf:about="http://www.elfak.ni.ac.rs/zerotrust6g#Goal_MonitorPatient">
+        <rdf:type rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#Goal"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.elfak.ni.ac.rs/zerotrust6g#MonitoringAgent_001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.elfak.ni.ac.rs/zerotrust6g#MonitoringAgent_001">
+        <rdf:type rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#AutonomousAgent"/>
+        <pursues rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#Goal_MonitorPatient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.elfak.ni.ac.rs/zerotrust6g#UnauthAgent_005 -->
+
+    <owl:NamedIndividual rdf:about="http://www.elfak.ni.ac.rs/zerotrust6g#UnauthAgent_005">
+        <rdf:type rdf:resource="http://www.elfak.ni.ac.rs/zerotrust6g#AutonomousAgent"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

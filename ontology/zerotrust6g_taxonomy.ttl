@@ -1,0 +1,245 @@
+@prefix : <http://www.elfak.ni.ac.rs/zerotrust6g#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.elfak.ni.ac.rs/zerotrust6g#> .
+
+<http://www.elfak.ni.ac.rs/zerotrust6g> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.elfak.ni.ac.rs/zerotrust6g#consistentWith
+:consistentWith rdf:type owl:ObjectProperty ;
+                rdfs:domain :Action ;
+                rdfs:range :Goal .
+
+
+###  http://www.elfak.ni.ac.rs/zerotrust6g#governedBy
+:governedBy rdf:type owl:ObjectProperty ;
+            rdfs:domain :Action ;
+            rdfs:range :SecurityPolicy .
+
+
+###  http://www.elfak.ni.ac.rs/zerotrust6g#hasRole
+:hasRole rdf:type owl:ObjectProperty ;
+         rdfs:domain :AutonomousAgent ;
+         rdfs:range :WorkflowState .
+
+
+###  http://www.elfak.ni.ac.rs/zerotrust6g#isAtState
+:isAtState rdf:type owl:ObjectProperty ;
+           rdfs:domain :AutonomousAgent ;
+           rdfs:range :WorkflowState .
+
+
+###  http://www.elfak.ni.ac.rs/zerotrust6g#operatesAt
+:operatesAt rdf:type owl:ObjectProperty ;
+            rdfs:domain :Entity ;
+            rdfs:range :InfrastructureLayer .
+
+
+###  http://www.elfak.ni.ac.rs/zerotrust6g#participatesIn
+:participatesIn rdf:type owl:ObjectProperty ;
+                rdfs:domain :Entity ;
+                rdfs:range :Workflow .
+
+
+###  http://www.elfak.ni.ac.rs/zerotrust6g#performsAction
+:performsAction rdf:type owl:ObjectProperty ;
+                rdfs:domain :Entity ;
+                rdfs:range :Action .
+
+
+###  http://www.elfak.ni.ac.rs/zerotrust6g#pursues
+:pursues rdf:type owl:ObjectProperty ;
+         rdfs:domain :AutonomousAgent ;
+         rdfs:range :Goal .
+
+
+###  http://www.elfak.ni.ac.rs/zerotrust6g#requestsAccessTo
+:requestsAccessTo rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Entity ;
+                  rdfs:range :Resource .
+
+
+###  http://www.elfak.ni.ac.rs/zerotrust6g#transitionsTo
+:transitionsTo rdf:type owl:ObjectProperty ;
+               rdfs:domain :WorkflowState ;
+               rdfs:range :WorkflowState .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.elfak.ni.ac.rs/zerotrust6g#hasMinimumTrust
+:hasMinimumTrust rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :SecurityPolicy ;
+                 rdfs:range xsd:decimal .
+
+
+###  http://www.elfak.ni.ac.rs/zerotrust6g#isAuthenticated
+:isAuthenticated rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Entity ;
+                 rdfs:range xsd:boolean .
+
+
+###  http://www.elfak.ni.ac.rs/zerotrust6g#trustValue
+:trustValue rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Entity ;
+            rdfs:range xsd:decimal .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.elfak.ni.ac.rs/zerotrust6g#Action
+:Action rdf:type owl:Class ;
+        rdfs:subClassOf owl:Thing .
+
+
+###  http://www.elfak.ni.ac.rs/zerotrust6g#Agent
+:Agent rdf:type owl:Class ;
+       rdfs:subClassOf :Entity .
+
+
+###  http://www.elfak.ni.ac.rs/zerotrust6g#AutonomousAgent
+:AutonomousAgent rdf:type owl:Class ;
+                 rdfs:subClassOf :Agent .
+
+
+###  http://www.elfak.ni.ac.rs/zerotrust6g#CloudLayer
+:CloudLayer rdf:type owl:Class ;
+            rdfs:subClassOf :InfrastructureLayer .
+
+
+###  http://www.elfak.ni.ac.rs/zerotrust6g#CompromisedAgent
+:CompromisedAgent rdf:type owl:Class ;
+                  owl:equivalentClass [ owl:intersectionOf ( :AutonomousAgent
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :operatesAt ;
+                                                               owl:someValuesFrom :EdgeLayer
+                                                             ]
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :trustValue ;
+                                                               owl:someValuesFrom xsd:decimal
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] ;
+                  rdfs:subClassOf :AutonomousAgent .
+
+
+###  http://www.elfak.ni.ac.rs/zerotrust6g#ContextualState
+:ContextualState rdf:type owl:Class ;
+                 rdfs:subClassOf owl:Thing .
+
+
+###  http://www.elfak.ni.ac.rs/zerotrust6g#ControlLayer
+:ControlLayer rdf:type owl:Class ;
+              rdfs:subClassOf :InfrastructureLayer .
+
+
+###  http://www.elfak.ni.ac.rs/zerotrust6g#Device
+:Device rdf:type owl:Class ;
+        rdfs:subClassOf :Entity .
+
+
+###  http://www.elfak.ni.ac.rs/zerotrust6g#EdgeLayer
+:EdgeLayer rdf:type owl:Class ;
+           rdfs:subClassOf :InfrastructureLayer .
+
+
+###  http://www.elfak.ni.ac.rs/zerotrust6g#Entity
+:Entity rdf:type owl:Class ;
+        rdfs:subClassOf owl:Thing .
+
+
+###  http://www.elfak.ni.ac.rs/zerotrust6g#Goal
+:Goal rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+
+###  http://www.elfak.ni.ac.rs/zerotrust6g#InfrastructureLayer
+:InfrastructureLayer rdf:type owl:Class ;
+                     rdfs:subClassOf owl:Thing .
+
+
+###  http://www.elfak.ni.ac.rs/zerotrust6g#Request
+:Request rdf:type owl:Class ;
+         rdfs:subClassOf owl:Thing .
+
+
+###  http://www.elfak.ni.ac.rs/zerotrust6g#Resource
+:Resource rdf:type owl:Class ;
+          rdfs:subClassOf owl:Thing .
+
+
+###  http://www.elfak.ni.ac.rs/zerotrust6g#SecurityPolicy
+:SecurityPolicy rdf:type owl:Class ;
+                rdfs:subClassOf owl:Thing .
+
+
+###  http://www.elfak.ni.ac.rs/zerotrust6g#Service
+:Service rdf:type owl:Class ;
+         rdfs:subClassOf :Entity .
+
+
+###  http://www.elfak.ni.ac.rs/zerotrust6g#TrustScore
+:TrustScore rdf:type owl:Class ;
+            rdfs:subClassOf owl:Thing .
+
+
+###  http://www.elfak.ni.ac.rs/zerotrust6g#User
+:User rdf:type owl:Class ;
+      rdfs:subClassOf :Entity .
+
+
+###  http://www.elfak.ni.ac.rs/zerotrust6g#Workflow
+:Workflow rdf:type owl:Class ;
+          rdfs:subClassOf owl:Thing .
+
+
+###  http://www.elfak.ni.ac.rs/zerotrust6g#WorkflowState
+:WorkflowState rdf:type owl:Class ;
+               rdfs:subClassOf owl:Thing .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.elfak.ni.ac.rs/zerotrust6g#CompromisedAgent_002
+:CompromisedAgent_002 rdf:type owl:NamedIndividual ,
+                               :AutonomousAgent ;
+                      :operatesAt :EdgeLayer_001 ;
+                      :trustValue 0.15 .
+
+
+###  http://www.elfak.ni.ac.rs/zerotrust6g#EdgeLayer_001
+:EdgeLayer_001 rdf:type owl:NamedIndividual ,
+                        :EdgeLayer .
+
+
+###  http://www.elfak.ni.ac.rs/zerotrust6g#Goal_MonitorPatient
+:Goal_MonitorPatient rdf:type owl:NamedIndividual ,
+                              :Goal .
+
+
+###  http://www.elfak.ni.ac.rs/zerotrust6g#MonitoringAgent_001
+:MonitoringAgent_001 rdf:type owl:NamedIndividual ,
+                              :AutonomousAgent ;
+                     :pursues :Goal_MonitorPatient .
+
+
+###  http://www.elfak.ni.ac.rs/zerotrust6g#UnauthAgent_005
+:UnauthAgent_005 rdf:type owl:NamedIndividual ,
+                          :AutonomousAgent .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
