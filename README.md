@@ -8,6 +8,9 @@ Supplementary material for the paper "Ontology-Grounded Zero Trust Access Contro
   -  `zerotrust_insurance_claims.py` - Configurations A-D, insurance claims benchmark
   -  `zerotrust_team.py` - Configuration D standalone run
   -  `zerotrust_team_diagnostic.py` - diagnostic tool for Configuration D
--  `Figure 1.png`, `Figure 2.jpg` - figures used in the paper ## Requirements - Protege 5.6+ with HermiT reasoner (for the ontology)
+-  `Figure 1.png`, `Figure 2.jpg` - figures used in the paper
+
+ # Requirements 
+-  Protege 5.6+ with HermiT reasoner (for the ontology)
 -  Python 3.10+, `pip install requests`
 -  Ollama with `llama3.2` and `mistral` models pulled (`ollama pull llama3.2`, `ollama pull mistral`)
